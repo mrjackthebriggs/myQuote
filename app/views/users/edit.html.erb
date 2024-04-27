@@ -1,0 +1,19 @@
+
+<div style="padding-top: 10px;"> 
+  <% if logged_in? && is_administrator? %> 
+    <h3>Update User Details</h3> 
+  <% else %> 
+    <h3>Update Your Details</h3> 
+  <% end %>
+</div> 
+
+<%= render "form", user: @user %> 
+<% if logged_in? && is_administrator? %>
+  <div style="padding-top: 10px;">
+    <div>
+      <!--Replaced with buttons, just looks better than links, ms/mr/mt is for spacing-->
+      <a href="<%= users_path %>" class="btn btn-outline-secondary ms-2 mt-5" style="margin-right:20px;">Back to Users</a>
+      <a href="<%= user_path(@user) %>" class="btn btn-warning mr-5 mt-5">Show User Details</a>
+    </div> 
+  </div>
+<% end %>

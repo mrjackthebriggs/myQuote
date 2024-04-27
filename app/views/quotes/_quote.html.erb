@@ -1,0 +1,35 @@
+<div id="<%= dom_id quote %>">
+  <% auth = Author.find_by(id:quote.author) %>
+  <% poster = User.find_by(id:quote.user) %>
+
+  <!--Based on the bootstap jumbotron example, wanted something big and grand to show the quote, cooked this up-->
+  <div class="container py-4">
+    <div class="card p-5 mb-4 rounded-3">
+      <div class="container-fluid bs-body-bg py-3">
+        <h4 class="fst-italic fw-bold fs-4">"<%= quote.quote_text %>"</h4>
+        <p class="fw-medium fs-5 text-end">- <%= auth.auth_f_name %> <%= auth.auth_l_name %></p>
+        <p class="fw-lighter fs-6 text-end"> Posted by: <%= poster.f_name %> <%= poster.l_name %></p>
+      </div>
+    </div>
+
+    <!--Allows the two bottom boxes to occupy the same row-->
+    <div class="row w-auto"> 
+      <div class="col mb-4"> 
+        <div class="card ms-auto rounded-3 w-auto">
+          <div class="container-fluid bs-body-bg py-2">
+            <p class="ms-4 mt-4 fs-6"> <strong>Public:</strong> <%= quote.public %></p>
+            <p class="ms-4 mt-4 fs-6"> <strong>Published On:</strong> <%= quote.pub_date.strftime('%d-%m-%Y') %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4"> 
+        <div class="card ms-auto rounded-3 w-auto">
+          <div class="container-fluid bs-body-bg py-2">
+            <p class="fw-lighter ms-4 mt-4 fs-6"> The poster, <%= poster.f_name %> <%= poster.l_name %>, said:</p>
+            <p class="fw-light fs-5 text-center">"<%= quote.user_com %>"<p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

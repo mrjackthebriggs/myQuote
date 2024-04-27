@@ -1,0 +1,11 @@
+<h1>Editing quote</h1>
+
+<%= render "form", quote: @quote %>
+
+<br>
+
+<div>
+  <!--I don't know why i made these buttons, even though editing quotes doesn't work yet-->
+  <a href="/your-quotes" class="btn btn-outline-secondary" style="margin-right:20px;">Back to Quotes</a>
+  <a href="<%= quotes_path(@quote) %>" class="btn btn-warning mr-5">Show this quote</a>
+</div>

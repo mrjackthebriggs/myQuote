@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div id="users">
+  <% @users.each do |user| %>
+    <!--Shows all users in the database on bootstrap cards-->
+    <div class= "container" style="padding-bottom: 30px;">
+    <div class="card" style="width: 32rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= user.f_name%> <%= user.l_name%> 
+          <!--Puts an admin flag next to the name if the user is an admin-->
+          <% if user.admin %>
+            <span class="badge text-bg-warning">Admin</span>
+          <% end %></h5>
+        <p class="card-text">
+        <strong>Email:</strong>
+        <%= user.email %></br>
+        <strong>Current Password: </strong><span class="text-danger">ENCRYPTED</span> 
+        <% user.password_digest %>
+        </p>
+        <a href="<%= user_path(user) %>" class="btn btn-primary">Show Details</a>
+        
+      </div>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+<!--% link_to "New user", new_user_path %-->
