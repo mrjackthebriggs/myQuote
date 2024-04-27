@@ -1,24 +1,13 @@
-# README
+# My Quote
+This application was submitted as part of an assignment for the university unit: Applications Development. Which scored a distinction
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a ruby on rails application that allows you to add quotes to a database that can be viewed through the web app
 
-Things you may want to cover:
+run with rails -s
 
-* Ruby version
+needs the required gems of:
+- Rails 7.0.7.2
+- sqlite3 1.4
+- bcrypt 3.1.7
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
